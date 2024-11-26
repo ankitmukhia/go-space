@@ -1,21 +1,21 @@
-package asseratation
+package switches
 
+/**
+* @function getExpenseReport
+* @impl  Type Switches
+* @return string, float64
+**/
+
+// Switch pattern matching
 func getExpenseReport(e expense) (string, float64) {
-	// i is instence of email struct, e. instence of expese interface
-	i, ok := e.(email)
-
-	if ok {
-		return i.toAddress, i.cost()
+	switch v := e.(type) {
+	case email:
+		return v.toAddress, v.cost()
+	case sms:
+		return v.toPhoneNumber, v.cost()
+	default:
+		return "", 0.0
 	}
-
-	// s is instence of sms struct, e. instence of expese interface
-	s, ok := e.(sms)
-
-	if ok {
-		return s.toPhoneNumber, s.cost()
-	}
-
-	return "", 0.0
 }
 
 // don't touch below this line
