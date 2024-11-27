@@ -2,6 +2,7 @@ package asseratation
 
 func getExpenseReport(e expense) (string, float64) {
 	// i is instence of email struct, e. instence of expese interface
+	// The interface is aware of the type satisfying it
 	i, ok := e.(email)
 
 	if ok {
