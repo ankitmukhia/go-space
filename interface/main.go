@@ -5,6 +5,7 @@ package main
  * @types { width, height }
  */
 import (
+	"errors"
 	"fmt"
 	"math"
 )
@@ -44,6 +45,8 @@ func printShapeData(s shape, i int) {
 
 func main() {
 	// initilize the instence of shape
+	var err = errors.New("example error message")
+	fmt.Println(err)
 	shapes := []shape{
 		rect{2, 3},
 		circle{2},
