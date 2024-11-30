@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt";
+	"errors";
+)
 
 type messageToSend struct {
 	phoneNumber int
@@ -31,6 +34,7 @@ func main() {
 	myMessage := messageToSend{}
 	fmt.Println(myMessage)
 	fmt.Println(animels.raptiles)
+	fmt.Println("nil nil nil ",errors.New(""))
 	fmt.Println(animels.category)
 	fmt.Println(animels.flying)
 	fmt.Println(animels.legs)
