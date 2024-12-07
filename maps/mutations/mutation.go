@@ -28,7 +28,7 @@ func deleteIfNecessary(users map[string]user, name string) (deleted bool, err er
 		return 
 	}
 
-	return
+	return false, nil
 }
 
 type user struct {
