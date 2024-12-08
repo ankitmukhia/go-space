@@ -1,0 +1,18 @@
+package suggested
+
+import "strings"
+
+func findSuggestedFriends(username string, friendships map[string][]string) []string {
+	suggestedFriends := []string{}
+
+	for key, count := range friendships {
+		// now check if any of keys value contain "username", if yes then combine all of them together
+		if 
+	}
+
+
+
+	return suggestedFriends
+}
+
+// combine all of friends
