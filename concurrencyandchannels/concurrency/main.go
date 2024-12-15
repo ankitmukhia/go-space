@@ -6,7 +6,10 @@ import (
 )
 
 func sendEmail(message string) {
-	func() {
+	// here order should be 1st someone send, then other receive.
+	// but right now order is swaped, 1st receive, 2nd send. which is wrong //
+	// go keyword make this anonymous func run concurently. 
+	go func() {
 		time.Sleep(time.Millisecond * 250)	
 		fmt.Printf("Email received: '%s'\n", message)
 	}()	
