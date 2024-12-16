@@ -3,10 +3,17 @@ package main
 import (
 	"fmt"
 	"time"
+	"errors"
 )
 
 func chargeForLineItem[T lineItem](newItem T, oldItems []T, balance float64) ([]T, float64, error) {
+	if newItem.GetCost() > balance {
+		return nil, 0.0, errors.New("insufficient funds")
+	}
 
+	oldItems = append(oldItems, newItem)
+	remaningBal := balance - newItem.GetCost() 
+	return oldItems, remaningBal, errors.New("") 
 }
 
 // don't edit below this line
