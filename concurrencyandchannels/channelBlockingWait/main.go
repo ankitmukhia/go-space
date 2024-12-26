@@ -1,10 +1,12 @@
 package main
 
-// haven't cleard yet, have to check it in more details?
+/* https://www.boot.dev/lessons/9c6f7fc9-8e7a-4857-8b10-70f130410700 */
 
 import "fmt"
 
 func waitForDBs(numDBs int, dbChan chan struct{}) {
+	//? initial code, <-dbChan // this is only droping on database, coz there is multiple db
+	// solution
 	for i := 0; i < numDBs; i++ {
 	   <-dbChan
 	}	
